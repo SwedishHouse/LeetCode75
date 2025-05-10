@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.138" timestamp="2025-05-10T22:19:35.639371+04:00" hostname="MSI"><testcase classname="tests.test_code" name="test_mergeAlternately" file="tests\test_code.py" line="5" time="0.002"><failure message="AttributeError: 'Solution' object has no attribute 'MergeAlternately'">def test_mergeAlternately():
+&gt;       assert solution.MergeAlternately("abc", "pqr") == "apbqcr"
+E       AttributeError: 'Solution' object has no attribute 'MergeAlternately'
+
+tests\test_code.py:7: AttributeError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase></testsuite></testsuites>
