@@ -1,1 +1,10 @@
 .vs/
+*.tlog
+*.log
+x64
+*.exe
+*.dll
+bin\*
+*.xml
+net*
+packages
