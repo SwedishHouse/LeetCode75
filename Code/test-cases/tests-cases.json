@@ -1,0 +1,51 @@
+{
+  "1768. Merge Strings Alternately": {
+    "0": {
+      "input": {
+        "word1": "abc",
+        "word2": "pqr"
+      },
+      "result": "apbqcr"
+    },
+    "1": {
+      "input": {
+        "word1": "ab",
+        "word2": "pqrs"
+      },
+      "result": "apbqrs"
+    },
+    "2": {
+      "input": {
+        "word1": "abcd",
+        "word2": "pq"
+      },
+      "result": "apbqcd"
+    }
+  },
+  "ValidateUser": {
+    "case1": {
+      "input": {
+        "username": "admin",
+        "password": "qwerty"
+      },
+      "result": true
+    }
+  },
+  "CalculateTotalPrice": {
+    "case1": {
+      "input": {
+        "price": 100,
+        "quantity": 2,
+        "discount": 0.1
+      },
+      "result": 180
+    },
+    "case2": {
+      "input": {
+        "price": 50,
+        "quantity": 3,
+        "discount": 0
+      },
+      "result": 150
+    }
+  }
