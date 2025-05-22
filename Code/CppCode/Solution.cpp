@@ -22,3 +22,20 @@ string Solution::mergeAlternately(string word1, string word2) {
     str_res.assign(result);
     return str_res;
 }
+
+string Solution::gcdOfStrings(string str1, string str2) {
+    if (str1 + str2 != str2 + str1)
+        return "";
+
+    size_t len1 = str1.length();
+    size_t len2 = str2.length();
+
+    while (len1 != len2)
+    {
+        if (len1 > len2)
+            len1 -= len2;
+        else
+            len2 -= len1;
+    }
+    return str1.substr(0, len1);
+}

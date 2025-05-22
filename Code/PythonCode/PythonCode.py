@@ -1,3 +1,4 @@
+from typing import List
 
 class Solution:
 
@@ -13,3 +14,26 @@ class Solution:
         for num in range(length, len(least)):
             res.append(least[num])
         return ''.join(res)
+
+    def gcdOfStrings(self, str1: str, str2: str) -> str:
+ 
+        def gcd(a, b):
+            if a % b == 0:
+                return b
+            return gcd(b, a % b)
+
+        num = gcd(len(str1), len(str2))
+        str3 = str1[:num]
+        for i in range(0, len(str1), num):
+            sub_string = str1[i: i + num]
+            if str3 != sub_string:
+                return ''
+        for i in range(0, len(str2), num):
+            sub_string = str2[i: i + num]
+            if str3 != sub_string:
+                return ''
+        return str3
+
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        greatest = max(candies)
+        return [i+extraCandies>=greatest for i in candies]

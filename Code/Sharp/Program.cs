@@ -26,6 +26,38 @@ namespace Sharp
 
             return new string(letters);
         }
+
+        public string GcdOfStrings(string str1, string str2)
+        {
+            if (str1 + str2 != str2 + str1)
+                return "";
+
+            int len1 = str1.Length, len2 = str2.Length;
+
+            while(len1 != len2)
+            {
+                if(len1 > len2)
+                    len1 -= len2;
+                else
+                    len2 -= len1;
+            }
+
+            return str1.Substring(0, len1);
+        }
+
+        public IList<bool> KidsWithCandies(int[] candies, int extraCandies)
+        {
+            int maxValue = candies.Max();
+
+            List<bool> res = new List<bool>(new bool[candies.Length]);
+            for (int i = 0; i < candies.Length; ++i)
+            {
+                res[i] = candies[i] + extraCandies >= maxValue;
+            }
+            return res;
+
+        }
+
     }
 
     public class Program
