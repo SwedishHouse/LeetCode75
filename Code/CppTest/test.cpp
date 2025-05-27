@@ -30,4 +30,23 @@ namespace Test_LeetCode
 
 	}
 
+	TEST_F(LeetCodeSolutionTest, kidsWithCandies)
+	{
+
+		vector<int> input_values = { 2, 3, 5, 1, 3 };
+		vector<bool> expected = { true, true, true, false, true };
+		int extraCandies = 3;
+		ASSERT_EQ(sol_obj.kidsWithCandies(input_values, extraCandies), expected);
+
+		input_values = { 4, 2, 1, 1, 2 };
+		expected = { true, false, false, false, false };
+		extraCandies = 1;
+		ASSERT_EQ(sol_obj.kidsWithCandies(input_values, extraCandies), expected);
+
+		input_values = { 12, 1, 12 };
+		expected = { true, false, true };
+		extraCandies = 10;
+		ASSERT_EQ(sol_obj.kidsWithCandies(input_values, extraCandies), expected);
+	}
+
 }
