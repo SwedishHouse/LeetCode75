@@ -11,3 +11,8 @@ def test_gcdOfStrings():
     assert solution.gcdOfStrings("ABCABC", "ABC") == "ABC"
     assert solution.gcdOfStrings("ABABAB", "ABAB") == "AB"
     assert solution.gcdOfStrings("LEET", "CODE") == ""
+
+def test_canPlaceFlowers():
+
+    assert solution.canPlaceFlowers([1,0,0,0,1], 1) == True
+    assert solution.canPlaceFlowers([1,0,0,0,1], 2) == False
