@@ -12,5 +12,6 @@ public:
 	vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies);
 	bool canPlaceFlowers(vector<int>& flowerbed, int n);
 	string reverseVowels(string s);
+	string reverseWords(string s);
 };
 

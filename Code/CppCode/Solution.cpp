@@ -107,3 +107,32 @@ string Solution::reverseVowels(string s) {
     }
     return s;
 }
+
+string Solution::reverseWords(string s) {
+    if (s.empty())
+        return s;
+
+    std::vector<std::string> back_order_words;
+    std::string res;
+    std::string::iterator start , end;
+    start = end = s.begin();
+    const std::string sep = std::string(" ");
+    while (end < s.end())
+    {
+        while (start < s.end() && *start == ' ') start++;
+
+        end = start;
+
+        while (end < s.end() && *end != ' ') end++;
+
+        if (end - start > 0)
+            back_order_words.push_back(std::string(start, end));
+        start = end;
+    }
+    
+    for (std::vector<string>::reverse_iterator i = back_order_words.rbegin(); i < back_order_words.rend() - 1; i++)
+        res += *i + " ";
+    res += *(back_order_words.rend() - 1);
+    back_order_words.clear();
+    return res;
+}

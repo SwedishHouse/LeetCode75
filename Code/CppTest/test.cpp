@@ -82,4 +82,27 @@ namespace Test_LeetCode
 		ASSERT_EQ(sol_obj.reverseVowels(input), out);
 	}
 
+	TEST_F(LeetCodeSolutionTest, reverseWords)
+	{
+		std::string input = "the sky is blue";
+		std::string out = "blue is sky the";
+
+		ASSERT_EQ(sol_obj.reverseWords(input), out);
+
+		input = "  hello world  ";
+		out = "world hello";
+
+		ASSERT_EQ(sol_obj.reverseWords(input), out);
+
+		input = "a good   example";
+		out = "example good a";
+
+		ASSERT_EQ(sol_obj.reverseWords(input), out);
+
+		input = "";
+		out = "";
+
+		ASSERT_EQ(sol_obj.reverseWords(input), out);
+	}
+
 }

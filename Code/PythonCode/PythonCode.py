@@ -70,6 +70,13 @@ class Solution:
             right-=1
 
         return ''.join(s)
+
+    def reverseWords(self, s: str) -> str:
+        words=s.split()
+        res=""
+        for word in words:
+            res=word + " " + res
+        return res.strip()
               
 
 
