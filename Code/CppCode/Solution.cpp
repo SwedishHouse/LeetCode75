@@ -55,3 +55,55 @@ vector<bool> Solution::kidsWithCandies(vector<int>& candies, int extraCandies) {
 
     return res;
 }
+
+bool Solution::canPlaceFlowers(vector<int>& flowerbed, int n) {
+
+    unsigned int counter = 0;
+
+    for(size_t i = 0; i !=flowerbed.size(); ++i)
+    {
+        if (!flowerbed[i])
+        {
+            if ((i == 0 || flowerbed[i - 1] == 0) && (i == flowerbed.size() - 1 || flowerbed[i + 1] == 0))
+            {
+                flowerbed[i] = 1;
+                if (++counter >= n)
+                    return true;
+
+            }
+        }
+    }
+    return counter >= n;
+}
+
+string Solution::reverseVowels(string s) {
+    if (s.empty() || s.size() < 2)
+    {
+        return s;
+    }
+    auto is_vowels = [](char x) {
+        return  x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u' ||
+                x == 'A' || x == 'E' || x == 'I' || x == 'O' || x == 'U'; };
+
+    int start = 0, end = s.size() - 1;
+    while (start < end)
+    {
+        while (start < end && !is_vowels(s[start]))
+            start++;
+
+        while (start < end && !is_vowels(s[end]))
+            end--;
+
+        {
+            char temp = s[start];
+
+            s[start] = s[end];
+            s[end] = temp;
+        }
+
+        start++;
+        end--;
+
+    }
+    return s;
+}

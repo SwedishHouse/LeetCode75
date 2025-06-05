@@ -58,6 +58,48 @@ namespace Sharp
 
         }
 
+        public bool CanPlaceFlowers(int[] flowerbed, int n)
+        {
+            int counter = 0;
+
+            for (int i = 0; i < flowerbed.Length; ++i)
+            {
+                if (flowerbed[i] == 0)
+                    if((i == 0 || flowerbed[i - 1] == 0) && (i == flowerbed.Length - 1 || flowerbed[i + 1] == 0))
+                    {
+                        flowerbed[i] = 1;
+                        if (++counter >= n) return true;
+                    }
+            }
+
+            return counter >= n;
+        }
+
+        public string ReverseVowels(string s)
+        {
+            bool IsVowel(char x)
+            {
+                return x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u' ||
+                x == 'A' || x == 'E' || x == 'I' || x == 'O' || x == 'U';
+            }
+
+            char[] sb = s.ToCharArray();
+            int start = 0, end = s.Length - 1;
+
+            while (start < end)
+            {
+                while (start < end && !IsVowel(sb[start])) start++;
+                while (start < end && !IsVowel(sb[end])) end--;
+
+                char temp = sb[start];
+                sb[start] = sb[end];
+                sb[end] = temp;
+                start++;
+                end--;
+            }
+            return new String(sb);
+        }
+
     }
 
     public class Program

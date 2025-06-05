@@ -23,7 +23,7 @@ namespace Test_LeetCode
 	TEST_F(LeetCodeSolutionTest, gcdOfStrings)
 	{
 		ASSERT_EQ(sol_obj.gcdOfStrings("ABCABC", "ABC"), "ABC");
-		
+
 		ASSERT_EQ(sol_obj.gcdOfStrings("ABABAB", "ABAB"), "AB");
 
 		ASSERT_EQ(sol_obj.gcdOfStrings("LEET", "CODE"), "");
@@ -47,6 +47,39 @@ namespace Test_LeetCode
 		expected = { true, false, true };
 		extraCandies = 10;
 		ASSERT_EQ(sol_obj.kidsWithCandies(input_values, extraCandies), expected);
+	}
+
+	TEST_F(LeetCodeSolutionTest, canPlaceFlowers)
+	{
+		vector<int> input = { 1,0,0,0,1 };
+		int n = 1;
+		bool expected = true;
+
+		ASSERT_EQ(sol_obj.canPlaceFlowers(input, n), expected);
+
+		input = { 1,0,0,0,1 };
+		n = 2;
+		expected = false;
+
+		ASSERT_EQ(sol_obj.canPlaceFlowers(input, n), expected);
+	}
+
+	TEST_F(LeetCodeSolutionTest, reverseVowels)
+	{
+		std::string input = "IceCreAm";
+		std::string out = "AceCreIm";
+
+		ASSERT_EQ(sol_obj.reverseVowels(input), out);
+
+		input = "leetcode";
+		out = "leotcede";
+
+		ASSERT_EQ(sol_obj.reverseVowels(input), out);
+
+		input = "a.";
+		out = "a.";
+
+		ASSERT_EQ(sol_obj.reverseVowels(input), out);
 	}
 
 }

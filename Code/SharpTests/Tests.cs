@@ -1,4 +1,5 @@
 ﻿using Sharp;
+using System.Numerics;
 
 namespace SharpTests
 {
@@ -46,6 +47,46 @@ namespace SharpTests
             input_list = solution.KidsWithCandies([12, 1, 12], 10).ToList<bool>();
             CollectionAssert.AreEqual(input_list, expected_list);
 
+        }
+
+        [TestMethod]
+        public void Test_CanPlaceFlowers()
+        {
+            var solution = new Solution();
+
+            int[] input = [ 1, 0, 0, 0, 1 ];
+            int n = 1;
+            bool expected = true;
+
+            Assert.AreEqual(solution.CanPlaceFlowers(input, n), expected);
+
+            input = [ 1,0,0,0,1 ];
+            n = 2;
+            expected = false;
+
+            Assert.AreEqual(solution.CanPlaceFlowers(input, n), expected);
+
+        }
+
+        [TestMethod]
+        public void Test_ReverseVowels()
+        {
+             var solution = new Solution();
+
+            string input = "IceCreAm";
+            string expected = "AceCreIm";
+
+            Assert.AreEqual(solution.ReverseVowels(input), expected);
+
+            input = "leetcode";
+            expected = "leotcede";
+
+            Assert.AreEqual(solution.ReverseVowels(input), expected);
+
+            input = "a.";
+            expected = "a.";
+
+            Assert.AreEqual(solution.ReverseVowels(input), expected);
         }
     }
 }
