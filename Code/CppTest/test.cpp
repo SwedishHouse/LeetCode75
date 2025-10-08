@@ -105,4 +105,34 @@ namespace Test_LeetCode
 		ASSERT_EQ(sol_obj.reverseWords(input), out);
 	}
 
+	TEST_F(LeetCodeSolutionTest, minFlips)
+	{
+		ASSERT_EQ(sol_obj.minFlips(2, 6, 5), 3);
+		ASSERT_EQ(sol_obj.minFlips(4, 2, 7), 1);
+		ASSERT_EQ(sol_obj.minFlips(1, 2, 3), 0);
+	}
+
+	TEST_F(LeetCodeSolutionTest, singleNumber)
+	{
+		int case_one[] = { 2,2,1 };
+		ASSERT_EQ(sol_obj.singleNumber(case_one, sizeof(case_one) / sizeof(int)), 1);
+
+		int case_two[] = { 4,1,2,1,2 };
+		ASSERT_EQ(sol_obj.singleNumber(case_two, sizeof(case_two) / sizeof(int)), 4);
+
+		int case_three[] = { 1 };
+		ASSERT_EQ(sol_obj.singleNumber(case_three, sizeof(case_three) / sizeof(int)), 1);
+	}
+
+	TEST_F(LeetCodeSolutionTest, isSubsequence)
+	{
+		ASSERT_EQ(sol_obj.isSubsequence("abc", "ahbgdc"), true);
+
+		ASSERT_EQ(sol_obj.isSubsequence("axc", "ahbgdc"), false);
+
+		ASSERT_EQ(sol_obj.isSubsequence("a", "b"), false);
+
+		ASSERT_EQ(sol_obj.isSubsequence("acb", "ahbgdc"), false);
+	}
+
 }

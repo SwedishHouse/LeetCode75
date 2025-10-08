@@ -1,3 +1,4 @@
+from itertools import product
 from typing import List
 
 class Solution:
@@ -77,6 +78,13 @@ class Solution:
         for word in words:
             res=word + " " + res
         return res.strip()
+
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        total = 1
+        for i in nums:
+            total *= i
+        return [total // i for i in nums]
+
               
 
 

@@ -136,3 +136,86 @@ string Solution::reverseWords(string s) {
     back_order_words.clear();
     return res;
 }
+
+int* Solution::countBits(int n, int* returnSize)
+{
+    *returnSize = n + 1;
+    int* arr = (int*)malloc((n + 1) * sizeof(int));
+    if (arr == NULL)
+        return NULL;
+
+    arr[0] = 0;
+    int index = 1;
+
+    while (index < *returnSize)
+    {
+        arr[index] = arr[index & (index - 1)] + 1;
+        index++;
+    }
+
+    return arr;
+}
+
+int Solution::singleNumber(int* nums, int numsSize)
+{
+    int unique_val = 0;
+
+    // Проходимся по всем элементам массива и выполняем XOR
+    for (int i = 0; i < numsSize; i++) {
+        unique_val = unique_val ^ nums[i];
+    }
+
+    return unique_val;
+}
+
+int Solution::minFlips(int a, int b, int c)
+{
+    int count = 0;
+
+    while (a || b || c)
+    {
+        const int
+            bit_a = a & 1,
+            bit_b = b & 1,
+            bit_c = c & 1;
+        if (bit_c)
+        {
+            count += !(bit_a | bit_b);
+        }
+        else
+        {
+            count += bit_a + bit_b;
+        }
+
+        a >>= 1;
+        b >>= 1;
+        c >>= 1;
+
+    }
+
+    return count;
+
+    return 0;
+}
+
+bool Solution::isSubsequence(string s, string t)
+{
+    if (s.empty())
+        return true;
+
+    if (s.length() > t.length())
+        return false;
+
+    if (s.length() == 1 && t.length() == 1)
+        return s[0] == t[0];
+
+    size_t index = 0;
+
+    for (string::const_iterator it = t.cbegin(); it != t.cend() && index != s.length(); ++it)
+    {
+        if (s[index] == *it) 
+            index++;
+    }
+
+    return index == s.length();
+}
