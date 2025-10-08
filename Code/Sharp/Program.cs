@@ -100,6 +100,13 @@ namespace Sharp
             return new String(sb);
         }
 
+        public string ReverseWords(string s)
+        {
+            string[] back_order_words = s.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            Array.Reverse(back_order_words);
+            return String.Join(' ', back_order_words);
+        }
+
     }
 
     public class Program

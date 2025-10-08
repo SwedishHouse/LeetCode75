@@ -9,3 +9,7 @@ bin\*
 net*
 packages
 obj
+*.obj
+*.dll
+bin\*
+Debug\*

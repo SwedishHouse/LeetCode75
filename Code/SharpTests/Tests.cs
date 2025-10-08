@@ -71,7 +71,7 @@ namespace SharpTests
         [TestMethod]
         public void Test_ReverseVowels()
         {
-             var solution = new Solution();
+            var solution = new Solution();
 
             string input = "IceCreAm";
             string expected = "AceCreIm";
@@ -87,6 +87,32 @@ namespace SharpTests
             expected = "a.";
 
             Assert.AreEqual(solution.ReverseVowels(input), expected);
+        }
+
+        [TestMethod]
+        public void Test_ReverseWords()
+        {
+            var solution = new Solution();
+
+            string input = "the sky is blue";
+            string expected = "blue is sky the";
+
+            Assert.AreEqual(solution.ReverseWords(input), expected);
+
+            input = "  hello world  ";
+            expected = "world hello";
+
+            Assert.AreEqual(solution.ReverseWords(input), expected);
+
+            input = "a good   example";
+            expected = "example good a";
+
+            Assert.AreEqual(solution.ReverseWords(input), expected);
+
+            input = "";
+            expected = "";
+
+            Assert.AreEqual(solution.ReverseWords(input), expected);
         }
     }
 }
