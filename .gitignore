@@ -13,3 +13,6 @@ obj
 *.dll
 bin\*
 Debug\*
+out
+out\*
+build\*
