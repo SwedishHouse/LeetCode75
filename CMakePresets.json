@@ -1,0 +1,22 @@
+{
+    "version": 3,
+    
+    "configurePresets": [
+        {
+            "name": "default",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER" : "clang++",
+                "CMAKE_C_COMPILER" : "clang",
+                "CMAKE_CXX_STANDART": "20"
+            }
+        },
+        {
+            "name": "Debug",
+            "inherits" : "default",
+            "displayName": "Debug Build"
+        }
+    ]
+    
+}
