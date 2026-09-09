@@ -1,4 +1,5 @@
-#include "Solution.h"
+#include "solution.h"
+
 
 string Solution::mergeAlternately(string word1, string word2) {
     const string* biggest = word1.size() >= word2.size() ? &word1 : &word2;
@@ -160,7 +161,7 @@ int Solution::singleNumber(int* nums, int numsSize)
 {
     int unique_val = 0;
 
-    // Проходимся по всем элементам массива и выполняем XOR
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ XOR
     for (int i = 0; i < numsSize; i++) {
         unique_val = unique_val ^ nums[i];
     }

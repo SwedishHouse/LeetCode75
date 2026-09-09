@@ -1,6 +1,6 @@
 #include "pch.h"
+#include "solution.h"
 
-#include "Solution.h"
 
 namespace Test_LeetCode
 {
