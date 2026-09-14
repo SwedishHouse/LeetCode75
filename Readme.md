@@ -11,13 +11,22 @@
 # Решение разделов
 ## 1. Array / String
 
-- [x] 1768. Merge Strings Alternately
-- [x] 
-- [x] 
-- [x] 
-- [x] 
+- [ ] 1768. Merge Strings Alternately
+- [ ] 1071. Greatest Common Divisor of Strings
+- [ ] 1431. Kids With the Greatest Number of Candies
+- [ ] 605. Can Place Flowers
+- [ ] 345. Reverse Vowels of a String
+- [ ] 151. Reverse Words in a String
+- [ ] 238. Product of Array Except Self
+- [ ] 334. Increasing Triplet Subsequence
+- [ ] 443. String Compression
 
 ## 2. Two Pointers
+
+- [ ] 283. Move Zeroes
+- [ ] 392. Is Subsequence
+- [ ] 11. Container With Most Water
+- [ ] 1679. Max Number of K-Sum Pairs
 
 ## 3. Sliding Window
 
@@ -30,6 +39,11 @@
 ## 7. Queue
 
 ## 8. Linked List
+
+- [ ] 2095. Delete the Middle Node of a Linked List
+- [ ] 328. Odd Even Linked List
+- [ ] 206. Reverse Linked List
+- [ ] 2130. Maximum Twin Sum of a Linked List
 
 ## 9. Binary Tree - DFS
 
@@ -52,6 +66,10 @@
 ## 18. DP - Multidimensional
 
 ## 19. Bit Manipulation
+
+- [ ] 338. Counting Bits
+- [ ] 136. Single Number
+- [ ] 1318. Minimum Flips to Make a OR b Equal to c
 
 ## 20. Trie
 

@@ -2,9 +2,11 @@ cmake_minimum_required(VERSION 3.21)
 
 project(LeetCode_75 VERSION 1.0.0 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_TANDARD 17)
 set(CMAKE_C_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 
 # --- Подключение Google Test ---
 include(FetchContent)
@@ -20,7 +22,10 @@ FetchContent_MakeAvailable(googletest)
 option(BUILD_TEST "Building Tests" ON)
 
 add_library(solutionlib 
-    src/solution.cpp)
+    src/solution.cpp
+    src/array_and_string.cpp
+    src/bit_manipulation.cpp
+)
 
 target_include_directories(solutionlib 
     PUBLIC

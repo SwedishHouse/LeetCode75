@@ -17,4 +17,4 @@ out
 out\*
 build\*
 build
-.vs
+.vscode
