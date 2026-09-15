@@ -11,7 +11,7 @@ class array_and_string
 public:
 
     // 1768. Merge Strings Alternately
-    string mergeAlternately(string word1, string word2);
+    string mergeAlternately(const string &word1, const string &word2);
     // 1071. Greatest Common Divisor of Strings
 	string gcdOfStrings(string str1, string str2);
     // 1431. Kids With the Greatest Number of Candies
