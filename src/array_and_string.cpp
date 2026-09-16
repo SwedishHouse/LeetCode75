@@ -1,6 +1,6 @@
 #include "array_and_string.h"
 
-string array_and_string::mergeAlternately(const string &word1, const string &word2) 
+string ArrayAndString::mergeAlternately(const string &word1, const string &word2) 
 {
     std::string res(word1.size() + word2.size(), '\0');
 
