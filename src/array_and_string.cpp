@@ -7,8 +7,6 @@ string array_and_string::mergeAlternately(const string &word1, const string &wor
     const auto& biggest = word1.size() >= word2.size() ? word1 : word2;
     const auto& smallest = word1.size() < word2.size() ? word1 : word2;
 
-    const size_t common_size = word1.size() + word2.size();
-
     unsigned int counter = 0;
     for (int i(0); i < smallest.size(); i++)
     {
