@@ -11,7 +11,7 @@
 # Решение разделов
 ## 1. Array / String
 
-- [ ] 1768. Merge Strings Alternately
+- [x] 1768. Merge Strings Alternately
 - [ ] 1071. Greatest Common Divisor of Strings
 - [ ] 1431. Kids With the Greatest Number of Candies
 - [ ] 605. Can Place Flowers

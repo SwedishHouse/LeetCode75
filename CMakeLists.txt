@@ -35,7 +35,8 @@ target_include_directories(solutionlib
 enable_testing()
 
 add_executable(LeetCode_75
-    tests/test.cpp)
+    tests/test.cpp
+    tests/test_array_and_string.cpp)
 
 target_include_directories(LeetCode_75 
     PUBLIC

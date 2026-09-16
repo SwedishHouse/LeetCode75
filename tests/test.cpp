@@ -1,5 +1,8 @@
 #include "pch.h"
 #include "solution.h"
+#include "array_and_string.h"
+
+
 
 
 namespace Test_LeetCode
@@ -9,16 +12,6 @@ namespace Test_LeetCode
 	public:
 		Solution sol_obj = Solution();
 	};
-
-	TEST_F(LeetCodeSolutionTest, mergeAlternatelyTest)
-	{
-		string word1 = "abc", word2 = "pqr";
-		ASSERT_EQ(sol_obj.mergeAlternately(word1, word2), "apbqcr");
-
-		ASSERT_EQ(sol_obj.mergeAlternately("ab", "pqrs"), "apbqrs");
-
-		ASSERT_EQ(sol_obj.mergeAlternately("abcd", "pq"), "apbqcd");
-	}
 
 	TEST_F(LeetCodeSolutionTest, gcdOfStrings)
 	{
