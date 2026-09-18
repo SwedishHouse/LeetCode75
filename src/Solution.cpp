@@ -1,24 +1,6 @@
 #include "solution.h"
 
 
-string Solution::gcdOfStrings(string str1, string str2) {
-    if (str1 + str2 != str2 + str1)
-        return "";
-
-    size_t len1 = str1.length();
-    size_t len2 = str2.length();
-
-    while (len1 != len2)
-    {
-        if (len1 > len2)
-            len1 -= len2;
-        else
-            len2 -= len1;
-    }
-    return str1.substr(0, len1);
-}
-
-
 vector<bool> Solution::kidsWithCandies(vector<int>& candies, int extraCandies) {
 
     int max = candies[0];

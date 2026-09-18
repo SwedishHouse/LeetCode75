@@ -13,16 +13,6 @@ namespace Test_LeetCode
 		Solution sol_obj = Solution();
 	};
 
-	TEST_F(LeetCodeSolutionTest, gcdOfStrings)
-	{
-		ASSERT_EQ(sol_obj.gcdOfStrings("ABCABC", "ABC"), "ABC");
-
-		ASSERT_EQ(sol_obj.gcdOfStrings("ABABAB", "ABAB"), "AB");
-
-		ASSERT_EQ(sol_obj.gcdOfStrings("LEET", "CODE"), "");
-
-	}
-
 	TEST_F(LeetCodeSolutionTest, kidsWithCandies)
 	{
 

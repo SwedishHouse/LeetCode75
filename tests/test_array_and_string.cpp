@@ -1,32 +1,46 @@
 #include "pch.h"
 #include "array_and_string.h"
+#include <tuple>
 
 
 namespace ArrayAndStringTest
 {
-    // Структура с тестовыми данными
-    struct TestCaseMergeAlternately {
-        std::string a;
-        std::string b;
-        std::string expected;
-    };
-
     // Параметризованный тест
-    class mergeAlternatelyTest : public ::testing::TestWithParam<TestCaseMergeAlternately> {};
+    using TwoStringInputOneOut = ::testing::TestWithParam<std::tuple<string, string, string>>;
 
-    TEST_P(mergeAlternatelyTest, ReturnsCorrectResult)
+    class mergeAlternatelyClass : public TwoStringInputOneOut {};
+
+    TEST_P(mergeAlternatelyClass, mergeAlternatelyReturnsCorrectResult)
     {
-        const auto& param = GetParam();
-        EXPECT_EQ(ArrayAndString::mergeAlternately(param.a, param.b), param.expected);
+        const auto [a, b, res] = GetParam();
+        EXPECT_EQ(ArrayAndString::mergeAlternately(a, b), res);
     }
     // Коллекция данных
     INSTANTIATE_TEST_SUITE_P(
-        mergeAlternatelyTestCases,                    
-        mergeAlternatelyTest,                       
+        mergeAlternatelyReturnsCorrectResult,                    
+        mergeAlternatelyClass,                       
         ::testing::Values(
-            TestCaseMergeAlternately{"abc", "pqr", "apbqcr"},
-            TestCaseMergeAlternately{"ab", "pqrs", "apbqrs"},
-            TestCaseMergeAlternately{"abcd", "pq", "apbqcd"}
+            std::make_tuple("abc", "pqr", "apbqcr"),
+            std::make_tuple("ab", "pqrs", "apbqrs"),
+            std::make_tuple("abcd", "pq", "apbqcd")
+        )
+    );
+
+    class gcdOfStringsClass : public TwoStringInputOneOut {};
+
+    TEST_P(gcdOfStringsClass, gcdOfStringsCorrectRes)
+    {
+        const auto [a, b, res] = GetParam();
+        EXPECT_EQ(ArrayAndString::gcdOfStrings(a, b), res);
+    }
+
+    INSTANTIATE_TEST_SUITE_P(
+        gcdOfStringsCorrectRes,                    
+        gcdOfStringsClass,                       
+        ::testing::Values(
+            std::make_tuple("ABCABC", "ABC", "ABC"),
+            std::make_tuple("ABABAB", "ABAB", "AB"),
+            std::make_tuple("LEET", "CODE", "")
         )
     );
 
