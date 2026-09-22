@@ -38,3 +38,20 @@ string ArrayAndString::gcdOfStrings(const string& str1, const string& str2)
     }
     return str1.substr(0, len1);
 }
+
+vector<bool> ArrayAndString::kidsWithCandies(const vector<int>& candies, int extraCandies) 
+{
+    int max = candies[0];
+
+    for(int var : candies)
+        if (var > max) max = var;
+
+    vector<bool> res;
+
+    for(int var : candies)
+        res.push_back(var + extraCandies >= max);
+
+    return res;
+}
+
+

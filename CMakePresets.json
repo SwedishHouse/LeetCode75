@@ -9,13 +9,20 @@
             "cacheVariables": {
                 "CMAKE_CXX_COMPILER" : "clang++",
                 "CMAKE_C_COMPILER" : "clang",
-                "CMAKE_CXX_STANDART": "20"
+                "CMAKE_CXX_STANDARD": "20",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "CMAKE_CXX_EXTENSIONS": "OFF"
             }
         },
         {
             "name": "Debug",
             "inherits" : "default",
-            "displayName": "Debug Build"
+            "displayName": "Debug Build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_CXX_FLAGS_DEBUG": "-g -O0 -fno-omit-frame-pointer",
+                "CMAKE_C_FLAGS_DEBUG": "-g -O0 -fno-omit-frame-pointer"
+            }
         }
     ]
     

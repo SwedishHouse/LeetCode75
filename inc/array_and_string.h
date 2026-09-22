@@ -15,7 +15,7 @@ public:
     // 1071. Greatest Common Divisor of Strings
 	static string gcdOfStrings(const string& str1, const string& str2);
     // 1431. Kids With the Greatest Number of Candies
-	static vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies);
+	static vector<bool> kidsWithCandies(const vector<int>& candies, int extraCandies);
     // 605. Can Place Flowers
 	static bool canPlaceFlowers(vector<int>& flowerbed, int n);
     // 345. Reverse Vowels of a String
