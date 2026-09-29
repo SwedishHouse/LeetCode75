@@ -64,14 +64,6 @@ namespace ArrayAndStringTest
         EXPECT_EQ(ArrayAndString::kidsWithCandies(a, b), res);
     }
 
-    TEST(kidsWithCandiesTest, SingleTest)
-    {
-        const std::vector<int> a = { 4, 2, 1, 1, 2 };
-        const int b  = 1;
-        const std::vector<bool> res ={ true, false, false, false, false };
-        EXPECT_EQ(ArrayAndString::kidsWithCandies(a, b), res);
-    }
-
     INSTANTIATE_TEST_SUITE_P(
         kidsWithCandiesCorrectRes,                    
         kidsWithCandiesTestClass,                       
@@ -93,5 +85,42 @@ namespace ArrayAndStringTest
             )
         )
     );
+
+
+    // 605. Can Place Flowers
+    using canPlaceFlowersClassTemplate = 
+        ::testing::TestWithParam<
+            std::tuple<
+                std::vector<int> , 
+                int, 
+                bool
+            >
+        >;
+
+    class canPlaceFlowersTestClass : public canPlaceFlowersClassTemplate {};
+
+    INSTANTIATE_TEST_SUITE_P(
+        canPlaceFlowersCorrectRes,
+        canPlaceFlowersTestClass,
+        ::testing::Values(
+            std::make_tuple(
+                std::vector<int>{ 1, 0, 0, 0, 1 },
+                1,
+                true
+            ),
+            std::make_tuple(
+                std::vector<int>{ 1, 0, 0, 0, 1 },
+                2,
+                false
+            )
+        )
+
+    );
+
+    TEST_P(canPlaceFlowersTestClass, canPlaceFlowersCorrectRes)
+    {
+        auto [a, b, res] = GetParam();
+        EXPECT_EQ(ArrayAndString::canPlaceFlowers(a, b), res);
+    }
 
 }

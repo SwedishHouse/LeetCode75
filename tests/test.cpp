@@ -3,8 +3,6 @@
 #include "array_and_string.h"
 
 
-
-
 namespace Test_LeetCode
 {
 	class LeetCodeSolutionTest : public testing::Test
@@ -12,21 +10,6 @@ namespace Test_LeetCode
 	public:
 		Solution sol_obj = Solution();
 	};
-    
-	TEST_F(LeetCodeSolutionTest, canPlaceFlowers)
-	{
-		vector<int> input = { 1,0,0,0,1 };
-		int n = 1;
-		bool expected = true;
-
-		ASSERT_EQ(sol_obj.canPlaceFlowers(input, n), expected);
-
-		input = { 1,0,0,0,1 };
-		n = 2;
-		expected = false;
-
-		ASSERT_EQ(sol_obj.canPlaceFlowers(input, n), expected);
-	}
 
 	TEST_F(LeetCodeSolutionTest, reverseVowels)
 	{

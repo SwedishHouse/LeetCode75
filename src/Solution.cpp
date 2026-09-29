@@ -16,26 +16,6 @@ vector<bool> Solution::kidsWithCandies(vector<int>& candies, int extraCandies) {
     return res;
 }
 
-bool Solution::canPlaceFlowers(vector<int>& flowerbed, int n) {
-
-    unsigned int counter = 0;
-
-    for(size_t i = 0; i !=flowerbed.size(); ++i)
-    {
-        if (!flowerbed[i])
-        {
-            if ((i == 0 || flowerbed[i - 1] == 0) && (i == flowerbed.size() - 1 || flowerbed[i + 1] == 0))
-            {
-                flowerbed[i] = 1;
-                if (++counter >= n)
-                    return true;
-
-            }
-        }
-    }
-    return counter >= n;
-}
-
 string Solution::reverseVowels(string s) {
     if (s.empty() || s.size() < 2)
     {

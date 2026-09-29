@@ -55,3 +55,24 @@ vector<bool> ArrayAndString::kidsWithCandies(const vector<int>& candies, int ext
 }
 
 
+bool ArrayAndString::canPlaceFlowers(vector<int>& flowerbed, int n) 
+{
+    unsigned int counter = 0;
+
+    for(size_t i = 0; i != flowerbed.size(); ++i)
+    {
+        if (!flowerbed[i])
+        {
+            if ((i == 0 || flowerbed[i - 1] == 0) && (i == flowerbed.size() - 1 || flowerbed[i + 1] == 0))
+            {
+                flowerbed[i] = 1;
+                if (++counter >= n)
+                    return true;
+
+            }
+        }
+    }
+    
+    return counter >= n;
+}
+
